@@ -20,6 +20,7 @@ module.exports = {
         },
       },
     },
+    'storybook-addon-designs',
   ],
   framework: '@storybook/react',
   core: {

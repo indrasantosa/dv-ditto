@@ -27,6 +27,8 @@ export type ButtonComponentProps = Omit<ComponentProps<'button'>, 'color'> & {
   positionInGroup?: PositionInGroup;
 };
 
+const BORDER_RADIUS = /*tw*/ classNames(`rounded-full`, `rou`, 'blue-');
+
 const colorClasses: Record<Color, string> = {
   blue: 'text-white bg-blue-700 border border-transparent hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 disabled:hover:bg-blue-700 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 dark:disabled:hover:bg-blue-600',
   alternative:
@@ -108,8 +110,7 @@ const ButtonComponent: FC<ButtonComponentProps> = ({
     data-testid="button-element"
     disabled={disabled}
     className={classNames(
-      'group flex h-min w-fit items-center justify-center p-0.5 text-center font-medium focus:z-10',
-      pill ? 'rounded-full' : 'rounded-lg',
+      `group flex h-min w-fit items-center justify-center p-0.5 text-center font-medium focus:z-10 ${BORDER_RADIUS}`,
       !gradientMonochrome && !gradientDuoTone && colorClasses[color],
       !gradientDuoTone && gradientMonochrome && gradientMonochromeClasses[gradientMonochrome],
       gradientDuoTone && gradientDuoToneClasses[gradientDuoTone],
