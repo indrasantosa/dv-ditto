@@ -1,10 +1,5 @@
 <div align="center">
-  <h1>Ditto - React</h1>
-  <p>
-    <a href="https://stunning-maamoul-a79e34.netlify.app">
-      <img alt="BCGDV - Ditto" width="350" src="https://flowbite.s3.amazonaws.com/github/logo-github.png">
-    </a>
-  </p>
+  <h1>DV Ditto</h1>
   <p>
     Easy custom built component for your project. Build web application even faster with components on top of React and Tailwind CSS
   </p>
@@ -23,11 +18,7 @@
 
 ---
 
-[![Screenshot of ditto-react.com](https://i.postimg.cc/hjdhcF2t/Screen-Shot-2022-05-01-at-19-34-39-fullpage.png)](https://postimg.cc/bDqq95X7)
-
----
-
-### `ditto-react` is an open source collection of UI components, built on top of flowbite in React, with utility classes from Tailwind CSS that you can use as a starting point for user interfaces and websites that is customizable.
+### `dv-ditto` is an open source collection of UI components, built on top of flowbite in React, with utility classes from Tailwind CSS that you can use as a starting point for user interfaces and websites that is customizable.
 
 ## Table of Contents
 
@@ -43,15 +34,15 @@
 
 ## Documentation
 
-Documentation for `ditto-react` is not yet finished.
+Documentation for `dv-ditto` is not yet finished.
 
-If you want to browse the components, visit [ditto-react.com](https://ditto-react.com/).
+If you want to browse the components, visit [ditto-react.com](https://ditt.bcgdv.com/).
 
 If you want to learn more about Flowbite, visit [Flowbite docs](https://flowbite.comhttps://flowbite.com/docs/getting-started/introduction/).
 
 ## Getting started
 
-To use `ditto-react`, you just need to setup `flowbite` normally and install `ditto-react` from `npm`.
+To use `dv-ditto`, you just need to setup `flowbite` normally and install `dv-ditto` from `npm`.
 
 `flowbite` can be included as a plugin into an existing Tailwind CSS project.
 
@@ -83,17 +74,17 @@ module.exports = {
   </tr>
   <tr>
     <td width="33.3333%">
-        <a href="https://ditto-react.com/#/alerts/">
+        <a href="https://ditt.bcgdv.com/#/alerts/">
             <img alt="Tailwind CSS Alerts" src="https://flowbite.s3.amazonaws.com/github/alerts.jpg">
         </a>
     </td>
     <td width="33.3333%">
-        <a href="https://ditto-react.com/#/badges/">
+        <a href="https://ditt.bcgdv.com/#/badges/">
             <img alt="Tailwind CSS Badge" src="https://flowbite.s3.amazonaws.com/github/badge.jpg">
         </a>
     </td>
     <td width="33.3333%">
-        <a href="https://ditto-react.com/#/breadcrumb/">
+        <a href="https://ditt.bcgdv.com/#/breadcrumb/">
             <img alt="Tailwind CSS Breadcrumbs" src="https://flowbite.s3.amazonaws.com/github/breadcrumbs.jpg">
         </a>
     </td>
@@ -105,17 +96,17 @@ module.exports = {
   </tr>
   <tr>
     <td width="33.3333%">
-        <a href="https://ditto-react.com/#/buttons/">
+        <a href="https://ditt.bcgdv.com/#/buttons/">
             <img alt="Tailwind CSS Buttons" src="https://flowbite.s3.amazonaws.com/github/buttons.jpg">
         </a>
     </td>
     <td width="33.3333%">
-        <a href="https://ditto-react.com/#/button-group/">
+        <a href="https://ditt.bcgdv.com/#/button-group/">
             <img alt="Tailwind CSS Button Group" src="https://flowbite.s3.amazonaws.com/github/button-group.jpg">
         </a>
     </td>
     <td width="33.3333%">
-        <a href="https://ditto-react.com/#/card/">
+        <a href="https://ditt.bcgdv.com/#/card/">
             <img alt="Tailwind CSS Cards" src="https://flowbite.s3.amazonaws.com/github/cards.jpg">
         </a>
     </td>
@@ -127,17 +118,17 @@ module.exports = {
   </tr>
   <tr>
     <td width="33.3333%">
-        <a href="https://ditto-react.com/#/dropdown/">
+        <a href="https://ditt.bcgdv.com/#/dropdown/">
             <img alt="Tailwind CSS Dropdown" src="https://flowbite.s3.amazonaws.com/github/dropdown.jpg">
         </a>
     </td>
     <td width="33.3333%">
-        <a href="https://ditto-react.com/#/forms/">
+        <a href="https://ditt.bcgdv.com/#/forms/">
             <img alt="Tailwind CSS Forms" src="https://flowbite.s3.amazonaws.com/github/forms.jpg">
         </a>
     </td>
     <td width="33.3333%">
-        <a href="https://ditto-react.com/#/list-group/">
+        <a href="https://ditt.bcgdv.com/#/list-group/">
             <img alt="Tailwind CSS List group" src="https://flowbite.s3.amazonaws.com/github/list-group.jpg">
         </a>
     </td>
@@ -149,17 +140,17 @@ module.exports = {
   </tr>
   <tr>
     <td width="33.3333%">
-        <a href="https://ditto-react.com/#/typography/">
+        <a href="https://ditt.bcgdv.com/#/typography/">
             <img alt="Tailwind CSS Typography" src="https://flowbite.s3.amazonaws.com/github/typography.jpg">
         </a>
     </td>
     <td width="33.3333%">
-        <a href="https://ditto-react.com/#/modal/">
+        <a href="https://ditt.bcgdv.com/#/modal/">
             <img alt="Tailwind CSS Modal" src="https://flowbite.s3.amazonaws.com/github/modal.jpg">
         </a>
     </td>
     <td width="33.3333%">
-        <a href="https://ditto-react.com/#/tabs/">
+        <a href="https://ditt.bcgdv.com/#/tabs/">
             <img alt="Tailwind CSS Tabs" src="https://flowbite.s3.amazonaws.com/github/tabs.jpg">
         </a>
     </td>
@@ -171,17 +162,17 @@ module.exports = {
   </tr>
   <tr>
     <td width="33.3333%">
-        <a href="https://ditto-react.com/#/navbars/">
+        <a href="https://ditt.bcgdv.com/#/navbars/">
             <img alt="Tailwind CSS Navbar" src="https://flowbite.s3.amazonaws.com/github/navbar.jpg">
         </a>
     </td>
     <td width="33.3333%">
-        <a href="https://ditto-react.com/#/pagination/">
+        <a href="https://ditt.bcgdv.com/#/pagination/">
             <img alt="Tailwind CSS Pagination" src="https://flowbite.s3.amazonaws.com/github/pagination.jpg">
         </a>
     </td>
     <td width="33.3333%">
-        <a href="https://ditto-react.com/#/timeline/">
+        <a href="https://ditt.bcgdv.com/#/timeline/">
             <img alt="Tailwind CSS Timeline" src="https://flowbite.s3.amazonaws.com/github/timeline.jpg">
         </a>
     </td>
@@ -193,17 +184,17 @@ module.exports = {
   </tr>
   <tr>
     <td width="33.3333%">
-        <a href="https://ditto-react.com/#/progress/">
+        <a href="https://ditt.bcgdv.com/#/progress/">
             <img alt="Tailwind CSS Progress Bar" src="https://flowbite.s3.amazonaws.com/github/progress.jpg">
         </a>
     </td>
     <td width="33.3333%">
-        <a href="https://ditto-react.com/#/tables/">
+        <a href="https://ditt.bcgdv.com/#/tables/">
             <img alt="Tailwind CSS Tables" src="https://flowbite.s3.amazonaws.com/github/tables.jpg">
         </a>
     </td>
     <td width="33.3333%">
-        <a href="https://ditto-react.com/#/toast/">
+        <a href="https://ditt.bcgdv.com/#/toast/">
             <img alt="Tailwind CSS Toast" src="https://flowbite.s3.amazonaws.com/github/toast.jpg">
         </a>
     </td>
@@ -215,7 +206,7 @@ module.exports = {
   </tr>
   <tr>
     <td width="33.3333%">
-        <a href="https://ditto-react.com/#/tooltips/">
+        <a href="https://ditt.bcgdv.com/#/tooltips/">
             <img alt="Tailwind CSS Tooltips" src="https://flowbite.s3.amazonaws.com/github/tooltips.jpg">
         </a>
     </td>
@@ -225,7 +216,7 @@ module.exports = {
         </a>
     </td>
     <td width="33.3333%">
-        <a href="https://ditto-react.com/#/spinner/">
+        <a href="https://ditt.bcgdv.com/#/spinner/">
             <img alt="Tailwind CSS Spinner" src="https://flowbite.s3.amazonaws.com/github/spinner.jpg">
         </a>
     </td>
@@ -237,17 +228,17 @@ module.exports = {
   </tr>
   <tr>
     <td width="33.3333%">
-        <a href="https://ditto-react.com/#/footer/">
+        <a href="https://ditt.bcgdv.com/#/footer/">
             <img alt="Tailwind CSS Footer" src="https://flowbite.s3.amazonaws.com/github/footer.jpg">
         </a>
     </td>
     <td width="33.3333%">
-        <a href="https://ditto-react.com/#/accordion/">
+        <a href="https://ditt.bcgdv.com/#/accordion/">
             <img alt="Tailwind CSS Accordion" src="https://flowbite.s3.amazonaws.com/github/accordion.jpg">
         </a>
     </td>
     <td width="33.3333%">
-        <a href="https://ditto-react.com/#/sidebar/">
+        <a href="https://ditt.bcgdv.com/#/sidebar/">
             <img alt="Tailwind CSS Sidebar" src="https://flowbite.s3.amazonaws.com/github/sidebar.jpg">
         </a>
     </td>
@@ -259,17 +250,17 @@ module.exports = {
   </tr>
   <tr>
     <td width="33.3333%">
-        <a href="https://ditto-react.com/#/carousel/">
+        <a href="https://ditt.bcgdv.com/#/carousel/">
             <img alt="Tailwind CSS Carousel" src="https://flowbite.s3.amazonaws.com/github/carousel.jpg">
         </a>
     </td>
     <td width="33.3333%">
-        <a href="https://ditto-react.com/#/avatar/">
+        <a href="https://ditt.bcgdv.com/#/avatar/">
             <img alt="Tailwind CSS Avatar" src="https://flowbite.s3.amazonaws.com/github/avatar.jpg">
         </a>
     </td>
     <td width="33.3333%">
-        <a href="https://ditto-react.com/#/rating/">
+        <a href="https://ditt.bcgdv.com/#/rating/">
             <img alt="Tailwind CSS Rating" src="https://flowbite.s3.amazonaws.com/github/rating.jpg">
         </a>
     </td>

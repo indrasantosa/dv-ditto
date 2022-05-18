@@ -2,12 +2,14 @@ import { ComponentProps, FC } from 'react';
 
 import { Meta, Story } from '@storybook/react/types-6-0';
 import { HiChevronDown } from 'react-icons/hi';
+import { withDesign } from 'storybook-addon-designs';
 
 import { Accordion, AccordionProps } from '.';
 
 export default {
   title: 'Components/Accordion',
   component: Accordion,
+  decorators: [withDesign],
 } as Meta;
 
 const icon: FC<ComponentProps<'svg'>> = HiChevronDown;
@@ -86,3 +88,10 @@ const Template: Story<AccordionProps> = (args) => (
 export const DefaultAccordion = Template.bind({});
 DefaultAccordion.storyName = 'Default';
 DefaultAccordion.args = {};
+
+DefaultAccordion.parameters = {
+  design: {
+    type: 'figma',
+    url: 'https://www.figma.com/file/U3v0je4no1JpE8sCud1pPZ/Flowbite-Pro-v2.1.0?node-id=3282%3A18777',
+  },
+};
