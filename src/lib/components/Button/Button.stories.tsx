@@ -20,6 +20,6 @@ DefaultButton.args = {
 DefaultButton.parameters = {
   design: {
     type: 'figma',
-    url: 'https://www.figma.com/file/U3v0je4no1JpE8sCud1pPZ/Flowbite-Pro-v2.1.0?node-id=2542%3A21012',
+    url: 'https://www.figma.com/file/MZbp0TRdMmGRSBlv6DDMdz/DV-Design-System?node-id=45%3A3039',
   },
 };
