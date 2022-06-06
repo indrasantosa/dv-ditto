@@ -84,6 +84,7 @@
     "@typescript-eslint/parser": "^5.10.1",
     "autoprefixer": "^10.4.4",
     "babel-loader": "^8.2.4",
+    "color": "^4.2.3",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^3.4.1",
