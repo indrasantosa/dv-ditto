@@ -89,10 +89,10 @@ const ToastPage: FC = () => {
             <span className="mb-1 text-sm font-semibold text-gray-900 dark:text-white">Update available</span>
             <div className="mb-2 text-sm font-normal">A new software version is available for download.</div>
             <div className="flex gap-2">
-              <Button className="!w-full" size="xs">
+              <Button className="!w-full" size="sm">
                 Update
               </Button>
-              <Button className="!w-full" color="light" size="xs">
+              <Button className="!w-full" color="secondary" size="sm">
                 Not now
               </Button>
             </div>

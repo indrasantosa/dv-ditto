@@ -11,43 +11,9 @@ const ButtonsPage: FC = () => {
       code: (
         <div className="flex flex-wrap gap-2">
           <Button>Default</Button>
-          <Button color="alternative">Alternative</Button>
-          <Button color="dark">Dark</Button>
-          <Button color="light">Light</Button>
-          <Button color="green">Green</Button>
-          <Button color="red">Red</Button>
-          <Button color="yellow">Yellow</Button>
-          <Button color="purple">Purple</Button>
-        </div>
-      ),
-      codeClassName: 'dark:!bg-gray-900',
-    },
-    {
-      title: 'Button pills',
-      code: (
-        <div className="flex flex-wrap gap-2">
-          <Button pill>Default</Button>
-          <Button color="alternative" pill>
-            Alternative
-          </Button>
-          <Button color="dark" pill>
-            Dark
-          </Button>
-          <Button color="light" pill>
-            Light
-          </Button>
-          <Button color="green" pill>
-            Green
-          </Button>
-          <Button color="red" pill>
-            Red
-          </Button>
-          <Button color="yellow" pill>
-            Yellow
-          </Button>
-          <Button color="purple" pill>
-            Purple
-          </Button>
+          <Button color="primary">Primary</Button>
+          <Button color="secondary">Secondary</Button>
+          <Button color="tertiary">Tertiary</Button>
         </div>
       ),
       codeClassName: 'dark:!bg-gray-900',
@@ -116,11 +82,9 @@ const ButtonsPage: FC = () => {
       title: 'Button sizes',
       code: (
         <div className="flex flex-wrap items-center gap-2">
-          <Button size="xs">Extra small</Button>
           <Button size="sm">Small</Button>
           <Button size="md">Base</Button>
           <Button size="lg">Large</Button>
-          <Button size="xl">Extra large</Button>
         </div>
       ),
       codeClassName: 'dark:!bg-gray-900',
@@ -151,9 +115,9 @@ const ButtonsPage: FC = () => {
       code: (
         <div className="flex flex-wrap items-center gap-2">
           <Button icon={HiOutlineArrowRight} />
-          <Button icon={HiOutlineArrowRight} pill />
+          <Button icon={HiOutlineArrowRight} />
           <Button icon={HiOutlineArrowRight} outline />
-          <Button icon={HiOutlineArrowRight} pill outline />
+          <Button icon={HiOutlineArrowRight} outline />
         </div>
       ),
       codeClassName: 'dark:!bg-gray-900',

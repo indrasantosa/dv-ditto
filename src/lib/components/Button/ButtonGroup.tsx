@@ -7,12 +7,11 @@ export type ButtonGroupProps = PropsWithChildren<{
   outline?: boolean;
 }>;
 
-const ButtonGroup: FC<ButtonGroupProps> = ({ children, pill, outline }) => {
+const ButtonGroup: FC<ButtonGroupProps> = ({ children, outline }) => {
   const items = useMemo(
     () =>
       Children.map(children as ReactElement<ButtonComponentProps>[], (child, index) =>
         cloneElement(child, {
-          pill,
           outline,
           positionInGroup:
             index === 0
@@ -22,7 +21,7 @@ const ButtonGroup: FC<ButtonGroupProps> = ({ children, pill, outline }) => {
               : 'middle',
         }),
       ),
-    [children, outline, pill],
+    [children, outline],
   );
 
   return (

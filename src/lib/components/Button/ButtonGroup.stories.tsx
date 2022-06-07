@@ -10,9 +10,9 @@ export default {
 
 const Template: Story<ButtonGroupProps> = (args) => (
   <Button.Group {...args}>
-    <Button color="alternative">Profile</Button>
-    <Button color="alternative">Settings</Button>
-    <Button color="alternative">Messages</Button>
+    <Button color="tertiary">Profile</Button>
+    <Button color="tertiary">Settings</Button>
+    <Button color="tertiary">Messages</Button>
   </Button.Group>
 );
 

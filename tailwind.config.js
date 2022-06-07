@@ -6,16 +6,6 @@ module.exports = {
     extend: {
       colors: {
         // Generate colors easily with this tool: https://javisperez.github.io/tailwindcolorshades/
-        mono: {
-          0: '#ffffff',
-          10: '#f7f7f8',
-          20: '#eeeeee',
-          30: '#d6d6d6',
-          40: '#c8c8c8',
-          60: '#969696',
-          80: '#444444',
-          100: '#000000',
-        },
         primary: {
           10: '#c2c2c2',
           20: '#a9a9a9',
@@ -61,6 +51,14 @@ module.exports = {
       },
       fontFamily: {
         sans: ['Lato', ...defaultTheme.fontFamily.sans],
+      },
+      lineHeight: {
+        11: '2.75rem',
+        12: '3rem',
+        13: '3.25rem',
+        14: '3.5rem',
+        15: '3.75rem',
+        16: '4rem',
       },
     },
   },
