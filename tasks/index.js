@@ -4,7 +4,6 @@ const fse = require('fs-extra');
 const path = require('path');
 const { parse, stringify, assign } = require('comment-json');
 
-const libPath = path.join(__dirname, '..', 'src', 'lib');
 const destinationRootpath = process.cwd();
 const destinationPath = path.join(destinationRootpath, 'src', 'lib');
 const sourceRootPath = path.join(__dirname, '..');
@@ -60,6 +59,7 @@ function injectDependencies() {
   fs.writeFileSync(targetPackageJsonPath, stringify(targetPackageJsonObject, null, 2));
 }
 
+// TODO: Combine inject dependency and devDependency
 function injectDevDependencies() {
   const sourcePackageJsonObject = parse(fs.readFileSync(sourcePackageJsonPath, 'utf8'));
   console.log(sourcePackageJsonObject);
@@ -89,6 +89,7 @@ function copyProjectDependencyFiles() {
   });
 }
 
+copyLibObjects();
 injectDependencies();
 injectDevDependencies();
 copyProjectDependencyFiles();

@@ -40,7 +40,8 @@
     "prepublishOnly": "yarn build:lib",
     "start:storybook": "start-storybook -p 6006",
     "build:storybook": "build-storybook -o build/storybook",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "chromatic": "npx chromatic --project-token=5154fa01a0c1"
   },
   "dependencies": {
     "@floating-ui/react-dom": "^0.6.3",
@@ -84,6 +85,7 @@
     "@typescript-eslint/parser": "^5.10.1",
     "autoprefixer": "^10.4.4",
     "babel-loader": "^8.2.4",
+    "chromatic": "^6.5.6",
     "color": "^4.2.3",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
