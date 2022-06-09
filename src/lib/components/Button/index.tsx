@@ -23,7 +23,7 @@ const colorClasses: Record<Color, string> = {
    * blue: 'text-white bg-blue-700 border border-transparent hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 disabled:hover:bg-blue-700 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 dark:disabled:hover:bg-blue-600'
    */
   primary:
-    /*tw*/ 'text-functional-10 bg-primary-100 border border-transparent hover:bg-primary-80 focus:ring-offset-2 focus:bg-primary-80 focus:ring-2 focus:ring-primary-80 active:bg-secondary-100 disabled:bg-secondary-60 outline-none',
+    /*tw*/ 'text-functional-10 bg-primary-100 border border-transparent hover:bg-primary-80 focus:ring-offset-2 focus:bg-primary-80 focus:ring-2 focus:ring-primary-80 active:bg-primary-40 disabled:bg-primary-10 outline-none',
   secondary:
     /*tw*/ 'text-black bg-white border border-primary-100 hover:text-primary-80 hover:bg-white hover:border-primary-80 focus:ring-offset-2 focus:ring-2 focus:ring-primary-80 active:text-secondary-100 active:border-secondary-60 active:ring-secondary-60 disabled:text-secondary-60 disabled:border-secondary-60 outline-none',
   tertiary:

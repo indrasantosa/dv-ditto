@@ -24,6 +24,8 @@ const devDependencyList = [
   '@storybook/addon-links',
   '@storybook/addon-essentials',
   '@storybook/addon-interactions',
+  '@storybook/builder-webpack5',
+  '@storybook/manager-webpack5',
   'storybook-dark-mode',
   '@storybook/addon-a11y',
   '@storybook/addon-postcss',
@@ -96,7 +98,12 @@ function copyProjectDependencyFiles() {
   });
 }
 
+function copyStorybookDir() {
+  fse.copySync(path.join(sourceRootPath, '.storybook'), path.join(destinationRootpath, '.storybook'));
+}
+
 copyLibObjects();
 injectDependencies();
 injectDevDependencies();
 copyProjectDependencyFiles();
+copyStorybookDir();

@@ -15,6 +15,8 @@ export const DefaultButton = Template.bind({});
 DefaultButton.storyName = 'Default';
 DefaultButton.args = {
   children: 'Button',
+  color: 'primary',
+  size: 'sm',
 };
 
 DefaultButton.parameters = {
