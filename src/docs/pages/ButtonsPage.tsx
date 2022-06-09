@@ -22,14 +22,14 @@ const ButtonsPage: FC = () => {
       title: 'Gradient Monochrome',
       code: (
         <div className="flex flex-wrap gap-2">
-          <Button gradientMonochrome="blue">Blue</Button>
-          <Button gradientMonochrome="green">Green</Button>
-          <Button gradientMonochrome="cyan">Cyan</Button>
-          <Button gradientMonochrome="teal">Teal</Button>
-          <Button gradientMonochrome="lime">Lime</Button>
-          <Button gradientMonochrome="red">Red</Button>
-          <Button gradientMonochrome="pink">Pink</Button>
-          <Button gradientMonochrome="purple">Purple</Button>
+          <Button>Blue</Button>
+          <Button>Green</Button>
+          <Button>Cyan</Button>
+          <Button>Teal</Button>
+          <Button>Lime</Button>
+          <Button>Red</Button>
+          <Button>Pink</Button>
+          <Button>Purple</Button>
         </div>
       ),
       codeClassName: 'dark:!bg-gray-900',
@@ -38,13 +38,13 @@ const ButtonsPage: FC = () => {
       title: 'Gradient duo-tone',
       code: (
         <div className="flex flex-wrap gap-2">
-          <Button gradientDuoTone="purpleToBlue">Purple to Blue</Button>
-          <Button gradientDuoTone="cyanToBlue">Cyan to Blue</Button>
-          <Button gradientDuoTone="greenToBlue">Green to Blue</Button>
-          <Button gradientDuoTone="purpleToPink">Purple to Pink</Button>
-          <Button gradientDuoTone="pinkToOrange">Pink to Orange</Button>
-          <Button gradientDuoTone="tealToLime">Teal to Lime</Button>
-          <Button gradientDuoTone="redToYellow">Red to Yellow</Button>
+          <Button>Purple to Blue</Button>
+          <Button>Cyan to Blue</Button>
+          <Button>Green to Blue</Button>
+          <Button>Purple to Pink</Button>
+          <Button>Pink to Orange</Button>
+          <Button>Teal to Lime</Button>
+          <Button>Red to Yellow</Button>
         </div>
       ),
       codeClassName: 'dark:!bg-gray-900',
@@ -53,27 +53,13 @@ const ButtonsPage: FC = () => {
       title: 'Outline',
       code: (
         <div className="flex flex-wrap items-center gap-2">
-          <Button outline gradientDuoTone="purpleToBlue">
-            Purple to Blue
-          </Button>
-          <Button outline gradientDuoTone="cyanToBlue">
-            Cyan to Blue
-          </Button>
-          <Button outline gradientDuoTone="greenToBlue">
-            Green to Blue
-          </Button>
-          <Button outline gradientDuoTone="purpleToPink">
-            Purple to Pink
-          </Button>
-          <Button outline gradientDuoTone="pinkToOrange">
-            Pink to Orange
-          </Button>
-          <Button outline gradientDuoTone="tealToLime">
-            Teal to Lime
-          </Button>
-          <Button outline gradientDuoTone="redToYellow">
-            Red to Yellow
-          </Button>
+          <Button>Purple to Blue</Button>
+          <Button>Cyan to Blue</Button>
+          <Button>Green to Blue</Button>
+          <Button>Purple to Pink</Button>
+          <Button>Pink to Orange</Button>
+          <Button>Teal to Lime</Button>
+          <Button>Red to Yellow</Button>
         </div>
       ),
       codeClassName: 'dark:!bg-gray-900',
@@ -116,8 +102,8 @@ const ButtonsPage: FC = () => {
         <div className="flex flex-wrap items-center gap-2">
           <Button icon={HiOutlineArrowRight} />
           <Button icon={HiOutlineArrowRight} />
-          <Button icon={HiOutlineArrowRight} outline />
-          <Button icon={HiOutlineArrowRight} outline />
+          <Button icon={HiOutlineArrowRight} />
+          <Button icon={HiOutlineArrowRight} />
         </div>
       ),
       codeClassName: 'dark:!bg-gray-900',
@@ -130,7 +116,7 @@ const ButtonsPage: FC = () => {
             <Spinner className="mr-3" size="sm" light />
             Loading ...
           </Button>
-          <Button outline>
+          <Button>
             <Spinner className="mr-3" size="sm" light />
             Loading ...
           </Button>

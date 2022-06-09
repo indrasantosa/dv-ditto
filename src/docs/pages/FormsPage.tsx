@@ -72,19 +72,19 @@ const FormsPage: FC = () => {
             <Label className="mb-2 block" htmlFor="email">
               Your email
             </Label>
-            <TextInput id="email" type="email" placeholder="name@flowbite.com" required shadow />
+            <TextInput id="email" type="email" placeholder="name@flowbite.com" required />
           </div>
           <div>
             <Label className="mb-2 block" htmlFor="password">
               Your password
             </Label>
-            <TextInput id="password" type="password" required shadow />
+            <TextInput id="password" type="password" required />
           </div>
           <div>
             <Label className="mb-2 block" htmlFor="repeat-password">
               Repeat password
             </Label>
-            <TextInput id="repeat-password" type="password" required shadow />
+            <TextInput id="repeat-password" type="password" required />
           </div>
           <div className="flex items-center gap-2">
             <Checkbox id="agree" />

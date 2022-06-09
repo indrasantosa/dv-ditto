@@ -21,6 +21,13 @@ const dependencyList = [
 
 const devDependencyList = [
   '@storybook/react',
+  '@storybook/addon-links',
+  '@storybook/addon-essentials',
+  '@storybook/addon-interactions',
+  'storybook-dark-mode',
+  '@storybook/addon-a11y',
+  '@storybook/addon-postcss',
+  'storybook-addon-designs',
   'storybook-addon-designs',
   'react-router-dom',
   'tailwindcss',

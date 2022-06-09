@@ -23,7 +23,7 @@ export const parameters = {
     },
   },
   darkMode: {
-    current: 'dark',
+    current: 'light',
     darkClass: 'dark',
     stylePreview: true,
   },

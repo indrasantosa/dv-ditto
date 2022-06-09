@@ -12,7 +12,6 @@ const ButtonGroup: FC<ButtonGroupProps> = ({ children, outline }) => {
     () =>
       Children.map(children as ReactElement<ButtonComponentProps>[], (child, index) =>
         cloneElement(child, {
-          outline,
           positionInGroup:
             index === 0
               ? 'start'
