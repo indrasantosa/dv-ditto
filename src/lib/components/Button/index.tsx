@@ -3,87 +3,72 @@ import classNames from 'classnames';
 import ButtonGroup from './ButtonGroup';
 
 export type Color = 'primary' | 'secondary' | 'tertiary';
-type GradientMonochrome = 'blue' | 'green' | 'cyan' | 'teal' | 'lime' | 'red' | 'pink' | 'purple';
-type GradientDuoTone =
-  | 'purpleToBlue'
-  | 'cyanToBlue'
-  | 'greenToBlue'
-  | 'purpleToPink'
-  | 'pinkToOrange'
-  | 'tealToLime'
-  | 'redToYellow';
 type Size = 'sm' | 'md' | 'lg';
 type PositionInGroup = 'start' | 'middle' | 'end';
 
 export type ButtonComponentProps = Omit<ComponentProps<'button'>, 'color'> & {
-  outline?: boolean;
   label?: ReactNode;
+  isDisabled?: boolean;
   color?: Color;
   size?: Size;
   icon?: FC<ComponentProps<'svg'>>;
-  gradientMonochrome?: GradientMonochrome;
-  gradientDuoTone?: GradientDuoTone;
   positionInGroup?: PositionInGroup;
 };
-
-const BORDER_RADIUS = /*tw*/ classNames(`rounded-full`, `rou`, 'blue-');
 
 const colorClasses: Record<Color, string> = {
   /**
    * Color should consist of text color, background color, border specs, hover, focus, active, disabled specs and dark mode
+   * To change offset color, refer to this manual https://tailwindcss.com/docs/ring-offset-width#changing-the-offset-color
    * example:
    * blue: 'text-white bg-blue-700 border border-transparent hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 disabled:hover:bg-blue-700 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 dark:disabled:hover:bg-blue-600'
    */
   primary:
-    'text-white bg-black border border-transparent hover:bg-black-800 focus:ring-4 focus:ring-blue-300 disabled:hover:bg-blue-700 dark:bg-black dark:hover:bg-blue-700 dark:focus:ring-blue-800 dark:disabled:hover:bg-blue-600',
+    /*tw*/ 'text-functional-10 bg-primary-100 border border-transparent hover:bg-primary-80 focus:ring-offset-2 focus:bg-primary-80 focus:ring-2 focus:ring-primary-80 active:bg-secondary-100 disabled:bg-secondary-60 outline-none',
   secondary:
-    'text-black bg-white border border-black hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 disabled:hover:bg-blue-700 dark:bg-blue-600 dark:hover:bg-white dark:focus:ring-blue-800 dark:disabled:hover:bg-blue-600',
+    /*tw*/ 'text-black bg-white border border-primary-100 hover:text-primary-80 hover:bg-white hover:border-primary-80 focus:ring-offset-2 focus:ring-2 focus:ring-primary-80 active:text-secondary-100 active:border-secondary-60 active:ring-secondary-60 disabled:text-secondary-60 disabled:border-secondary-60 outline-none',
   tertiary:
-    'text-white bg-blue-700 border border-transparent hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 disabled:hover:bg-blue-700 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 dark:disabled:hover:bg-blue-600',
+    /*tw*/ 'text-black bg-white border-0 border-primary-100 hover:text-primary-80 hover:bg-white hover:border-primary-80 active:text-secondary-100 active:border-secondary-60 disabled:text-secondary-60 outline-none',
 };
 
 const sizeClasses: Record<Size, string> = {
-  sm: 'text-sm px-3 py-1.5',
-  md: 'text-sm px-4 py-2',
-  lg: 'text-base px-5 py-2.5',
+  sm: /*tw*/ 'text-sm leading-6 px-4 py-2',
+  md: /*tw*/ 'text-base font-semibold px-8 py-4',
+  lg: /*tw*/ 'text-base font-semibold px-8 py-5',
 };
 
 const iconSizeClasses: Record<Size, string> = {
-  sm: '!px-1.5',
-  md: '!px-2',
-  lg: '!p-2.5',
+  sm: /*tw*/ '!px-1',
+  md: /*tw*/ '!px-2',
+  lg: /*tw*/ '!p-2.5',
 };
 
 const borderRadiusClasses: Record<Size, string> = {
-  sm: 'rounded-full',
-  md: 'rounded-full',
-  lg: 'rounded-full',
+  sm: /*tw*/ 'rounded-full',
+  md: /*tw*/ 'rounded-full',
+  lg: /*tw*/ 'rounded-full',
 };
 
 const ButtonComponent: FC<ButtonComponentProps> = ({
   children,
   className,
   label,
-  outline,
-  disabled = false,
+  isDisabled = false,
   size = 'md',
   icon: Icon,
   color = 'primary',
-  gradientMonochrome,
-  gradientDuoTone,
   positionInGroup,
   ...props
 }) => (
   <button
     data-testid="button-element"
-    disabled={disabled}
+    disabled={isDisabled}
     className={classNames(
-      `group flex h-min w-fit items-center justify-center p-0.5 text-center font-medium focus:z-10 ${BORDER_RADIUS}`,
+      `group flex h-min w-fit items-center justify-center p-0.5 text-center font-medium focus:z-10`,
       colorClasses[color],
+      borderRadiusClasses[size],
       {
-        'border border-gray-900 dark:border-white': color === 'tertiary' && outline,
-        'cursor-not-allowed opacity-50': disabled,
-        'focus:!ring-2': !!positionInGroup,
+        // 'border border-gray-900 dark:border-white': color === 'tertiary' && outline,
+        'cursor-not-allowed': isDisabled,
         'rounded-r-none': positionInGroup === 'start',
         '!rounded-none border-l-0 pl-0': positionInGroup === 'middle',
         'rounded-l-none border-l-0 pl-0': positionInGroup === 'end',
@@ -94,9 +79,7 @@ const ButtonComponent: FC<ButtonComponentProps> = ({
     {...props}
   >
     <span
-      className={classNames('flex items-center', sizeClasses[size], borderRadiusClasses[size], {
-        'bg-white text-gray-900 transition-all duration-75 ease-in group-hover:bg-opacity-0 group-hover:text-inherit dark:bg-gray-900 dark:text-white':
-          outline,
+      className={classNames('flex items-center', sizeClasses[size], {
         'rounded-r-none': positionInGroup === 'start',
         '!rounded-none': positionInGroup === 'middle',
         'rounded-l-none': positionInGroup === 'end',

@@ -20,6 +20,6 @@ DefaultButton.args = {
 DefaultButton.parameters = {
   design: {
     type: 'figma',
-    url: 'https://www.figma.com/file/MZbp0TRdMmGRSBlv6DDMdz/DV-Design-System?node-id=176%3A60433',
+    url: 'https://www.figma.com/file/qFY6NbuB67WsAmbdNAt6HT/DV-Design-System?node-id=292%3A12608',
   },
 };
