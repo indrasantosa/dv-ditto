@@ -37,9 +37,9 @@ const sizeClasses: Record<Size, string> = {
 };
 
 const iconSizeClasses: Record<Size, string> = {
-  sm: /*tw*/ '!px-1',
-  md: /*tw*/ '!px-2',
-  lg: /*tw*/ '!p-2.5',
+  sm: /*tw*/ '',
+  md: /*tw*/ '',
+  lg: /*tw*/ '',
 };
 
 const borderRadiusClasses: Record<Size, string> = {
@@ -63,7 +63,8 @@ const ButtonComponent: FC<ButtonComponentProps> = ({
     data-testid="button-element"
     disabled={isDisabled}
     className={classNames(
-      `group flex h-min w-fit items-center justify-center p-0.5 text-center font-medium focus:z-10`,
+      `group flex h-min w-fit items-center justify-center text-center font-medium focus:z-10`,
+      sizeClasses[size],
       colorClasses[color],
       borderRadiusClasses[size],
       {
@@ -79,7 +80,7 @@ const ButtonComponent: FC<ButtonComponentProps> = ({
     {...props}
   >
     <span
-      className={classNames('flex items-center', sizeClasses[size], {
+      className={classNames('flex items-center', {
         'rounded-r-none': positionInGroup === 'start',
         '!rounded-none': positionInGroup === 'middle',
         'rounded-l-none': positionInGroup === 'end',
@@ -87,7 +88,7 @@ const ButtonComponent: FC<ButtonComponentProps> = ({
       })}
     >
       {Icon ? (
-        <Icon className="h-5 w-5" />
+        <Icon className="h-6 w-6" />
       ) : (
         <>
           {children}
