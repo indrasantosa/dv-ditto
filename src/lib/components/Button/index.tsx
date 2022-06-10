@@ -1,6 +1,6 @@
 import { ComponentProps, FC, ReactNode } from 'react';
 import classNames from 'classnames';
-import ButtonGroup from './ButtonGroup';
+import ButtonGroup from '../ButtonGroup';
 
 export type Color = 'primary' | 'secondary' | 'tertiary';
 type Size = 'sm' | 'md' | 'lg';

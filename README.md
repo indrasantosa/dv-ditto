@@ -20,45 +20,30 @@
 
 ### `dv-ditto` is an open source collection of UI components, built on top of flowbite in React, with utility classes from Tailwind CSS that you can use as a starting point for user interfaces and websites that is customizable.
 
-## Table of Contents
-
-- [Table of Contents](#table-of-contents)
-- [Documentation](#documentation)
-- [Getting started](#getting-started)
-  - [Require via `npm`](#require-via-npm)
-- [Figma](#figma)
-
-## Documentation
-
-Documentation for `dv-ditto` is not yet finished.
-
-If you want to browse the components, visit [ditto-react.com](https://ditt.bcgdv.com/).
-
-If you want to learn more about Flowbite, visit [Flowbite docs](https://flowbite.comhttps://flowbite.com/docs/getting-started/introduction/).
+---
 
 ## Getting started
 
-To use `dv-ditto`, you just need to setup `flowbite` normally and install `dv-ditto` from `npm`.
-
-`flowbite` can be included as a plugin into an existing Tailwind CSS project.
-
-### Require via `npm`
-
-Make sure that you have <a href="https://nodejs.org/en/" rel="nofollow" >Node.js</a> and <a href="https://tailwindcss.com/" rel="nofollow" >Tailwind CSS</a> installed.
-
-1. Install `flowbite` as a dependency using `npm` by running the following command:
-
-```bash
-npm i flowbite ditto-react
+To use `dv-ditto`, you just need to setup the `dv-ditto` cli tools. For now, this tools only support project that is created using CRA typescript and using `yarn`
+1. To setup this, first you need to clone this project into your computer.
+```Bash
+git clone path-to-repository
 ```
-
-2. Require `flowbite` as a plugin inside the `tailwind.config.js` file:
-
-```javascript
-module.exports = {
-  plugins: [require('flowbite/plugin')],
-};
+2. Install the project dependencies
+```Bash
+yarn install
 ```
+3. Install the project as a global cli tools for npm
+```Bash
+npm install . -g
+```
+4. Verify the installation by typing
+```Bash
+which dv-ditto
+```
+5. It should show the executable path of `dv-ditto`
+
+
 
 ## Figma
 

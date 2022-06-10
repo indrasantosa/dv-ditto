@@ -1,10 +1,10 @@
 import { Meta, Story } from '@storybook/react/types-6-0';
-import { Button } from '.';
+import { Button } from '../Button';
 
-import { ButtonGroupProps } from './ButtonGroup';
+import { ButtonGroupProps } from '.';
 
 export default {
-  title: 'Components/Button',
+  title: 'Components/Button Group',
   component: Button.Group,
 } as Meta;
 

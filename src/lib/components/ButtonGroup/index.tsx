@@ -1,6 +1,6 @@
 import { Children, cloneElement, FC, PropsWithChildren, ReactElement, useMemo } from 'react';
 
-import { ButtonComponentProps } from '.';
+import { ButtonComponentProps } from '../Button';
 
 export type ButtonGroupProps = PropsWithChildren<{
   pill?: boolean;
