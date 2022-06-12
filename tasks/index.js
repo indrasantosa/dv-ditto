@@ -38,14 +38,16 @@ const devDependencyList = [
   'flowbite',
 ];
 
-const rootFileList = ['tailwind.config.js', 'postcss.config.js'];
+const scriptsToIject = {
+  'start:storybook': 'start-storybook -p 6006',
+  'build:storybook': 'build-storybook -o build/storybook',
+};
 
-console.log(`This will copy the compoentns to ${destinationRootpath}`);
+const rootFileList = ['tailwind.config.js', 'postcss.config.js'];
 
 function copyLibObjects() {
   try {
     fse.copySync(sourcePath, destinationPath);
-    console.log('Copied successfully');
   } catch (err) {
     console.error(err);
   }
@@ -53,32 +55,23 @@ function copyLibObjects() {
 
 function injectDependencies() {
   const sourcePackageJsonObject = parse(fs.readFileSync(sourcePackageJsonPath, 'utf8'));
-  console.log(sourcePackageJsonObject);
   const relatedDependencies = {};
   dependencyList.map((item) => {
-    console.log(sourcePackageJsonObject.dependencies[item]);
     relatedDependencies[item] = sourcePackageJsonObject.dependencies[item];
   });
 
-  console.log(relatedDependencies);
-
   const targetPackageJsonObject = parse(fs.readFileSync(targetPackageJsonPath).toString());
   assign(targetPackageJsonObject.dependencies, relatedDependencies);
-  console.log(targetPackageJsonObject);
   fs.writeFileSync(targetPackageJsonPath, stringify(targetPackageJsonObject, null, 2));
 }
 
 // TODO: Combine inject dependency and devDependency
 function injectDevDependencies() {
   const sourcePackageJsonObject = parse(fs.readFileSync(sourcePackageJsonPath, 'utf8'));
-  console.log(sourcePackageJsonObject);
   const relatedDevDependencies = {};
   devDependencyList.map((item) => {
-    console.log(sourcePackageJsonObject.devDependencies[item]);
     relatedDevDependencies[item] = sourcePackageJsonObject.devDependencies[item];
   });
-
-  console.log(relatedDevDependencies);
 
   const targetPackageJsonObject = parse(fs.readFileSync(targetPackageJsonPath).toString());
 
@@ -88,7 +81,6 @@ function injectDevDependencies() {
   }
 
   assign(targetPackageJsonObject.devDependencies, relatedDevDependencies);
-  console.log(targetPackageJsonObject);
   fs.writeFileSync(targetPackageJsonPath, stringify(targetPackageJsonObject, null, 2));
 }
 
@@ -100,10 +92,18 @@ function copyProjectDependencyFiles() {
 
 function copyStorybookDir() {
   fse.copySync(path.join(sourceRootPath, '.storybook'), path.join(destinationRootpath, '.storybook'));
+  fse.copySync(path.join(sourceRootPath, './src/stories'), path.join(destinationRootpath, './src/stories'));
+}
+
+function addPackageScripts() {
+  const targetPackageJsonObject = parse(fs.readFileSync(targetPackageJsonPath).toString());
+  assign(targetPackageJsonObject.scripts, scriptsToIject);
+  fs.writeFileSync(targetPackageJsonPath, stringify(targetPackageJsonObject, null, 2));
 }
 
 copyLibObjects();
 injectDependencies();
 injectDevDependencies();
+addPackageScripts();
 copyProjectDependencyFiles();
 copyStorybookDir();
