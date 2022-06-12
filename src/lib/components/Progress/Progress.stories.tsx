@@ -3,7 +3,7 @@ import { Meta, Story } from '@storybook/react/types-6-0';
 import { Progress, ProgressProps } from '.';
 
 export default {
-  title: 'Components/Progress',
+  title: '02. Components/Progress',
   component: Progress,
 } as Meta;
 

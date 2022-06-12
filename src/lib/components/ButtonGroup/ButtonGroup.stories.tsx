@@ -4,7 +4,7 @@ import { Button } from '../Button';
 import { ButtonGroupProps } from '.';
 
 export default {
-  title: 'Components/Button Group',
+  title: '02. Components/Button Group',
   component: Button.Group,
 } as Meta;
 

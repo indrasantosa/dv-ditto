@@ -4,7 +4,7 @@ import { HiEye, HiInformationCircle } from 'react-icons/hi';
 import { Alert, AlertProps } from '.';
 
 export default {
-  title: 'Components/Alert',
+  title: '02. Components/Alert',
   component: Alert,
 } as Meta;
 

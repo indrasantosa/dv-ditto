@@ -3,7 +3,7 @@ import { Meta, Story } from '@storybook/react/types-6-0';
 import { Label, LabelProps } from './Label';
 
 export default {
-  title: 'Components/FormControls',
+  title: '02. Components/FormControls',
   component: Label,
 } as Meta;
 

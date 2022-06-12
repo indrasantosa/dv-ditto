@@ -3,7 +3,7 @@ import { Meta, Story } from '@storybook/react/types-6-0';
 import { DarkThemeToggle } from '.';
 
 export default {
-  title: 'Components/DarkThemeToggle',
+  title: '02. Components/DarkThemeToggle',
   component: DarkThemeToggle,
 } as Meta;
 

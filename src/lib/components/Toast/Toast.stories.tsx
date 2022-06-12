@@ -4,7 +4,7 @@ import { HiFire } from 'react-icons/hi';
 import { Toast, ToastProps } from '.';
 
 export default {
-  title: 'Components/Toast',
+  title: '02. Components/Toast',
   component: Toast,
 } as Meta;
 

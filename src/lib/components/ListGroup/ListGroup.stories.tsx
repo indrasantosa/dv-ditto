@@ -3,7 +3,7 @@ import { Meta, Story } from '@storybook/react/types-6-0';
 import { ListGroup, ListGroupProps } from '.';
 
 export default {
-  title: 'Components/ListGroup',
+  title: '02. Components/ListGroup',
   component: ListGroup,
 } as Meta;
 

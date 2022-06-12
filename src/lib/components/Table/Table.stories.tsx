@@ -3,7 +3,7 @@ import { Meta, Story } from '@storybook/react/types-6-0';
 import { Table, TableProps } from '.';
 
 export default {
-  title: 'Components/Tables',
+  title: '02. Components/Tables',
   component: Table,
 } as Meta;
 

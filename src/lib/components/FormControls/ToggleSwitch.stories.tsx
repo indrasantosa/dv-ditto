@@ -3,7 +3,7 @@ import { Meta, Story } from '@storybook/react/types-6-0';
 import { ToggleSwitch, ToggleSwitchProps } from './ToggleSwitch';
 
 export default {
-  title: 'Components/FormControls',
+  title: '02. Components/FormControls',
   component: ToggleSwitch,
 } as Meta;
 

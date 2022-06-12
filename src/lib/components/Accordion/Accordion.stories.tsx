@@ -7,7 +7,7 @@ import { withDesign } from 'storybook-addon-designs';
 import { Accordion, AccordionProps } from '.';
 
 export default {
-  title: 'Components/Accordion',
+  title: '02. Components/Accordion',
   component: Accordion,
   decorators: [withDesign],
 } as Meta;

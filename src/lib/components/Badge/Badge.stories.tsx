@@ -4,7 +4,7 @@ import { HiCheck } from 'react-icons/hi';
 import { Badge, BadgeProps } from '.';
 
 export default {
-  title: 'Components/Badge',
+  title: '02. Components/Badge',
   component: Badge,
 } as Meta;
 

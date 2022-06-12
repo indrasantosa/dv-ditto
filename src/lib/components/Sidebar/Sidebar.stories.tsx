@@ -7,7 +7,7 @@ import { Badge } from '../Badge';
 import { Button } from '../Button';
 
 export default {
-  title: 'Components/Sidebar',
+  title: '02. Components/Sidebar',
   component: Sidebar,
 } as Meta;
 

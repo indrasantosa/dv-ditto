@@ -3,7 +3,7 @@ import { Meta, Story } from '@storybook/react/types-6-0';
 import { Rating, RatingProps } from '.';
 
 export default {
-  title: 'Components/Ratings',
+  title: '02. Components/Ratings',
   component: Rating,
 } as Meta;
 

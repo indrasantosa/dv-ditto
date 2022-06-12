@@ -5,7 +5,7 @@ import { BiBuoy } from 'react-icons/bi';
 import { TextInput, TextInputProps } from './TextInput';
 
 export default {
-  title: 'Components/FormControls',
+  title: '02. Components/FormControls',
   component: TextInput,
   decorators: [withDesign],
 } as Meta;

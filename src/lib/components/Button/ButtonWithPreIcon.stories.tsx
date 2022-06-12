@@ -5,7 +5,7 @@ import { BiBitcoin } from 'react-icons/bi';
 import { Button, ButtonComponentProps } from '.';
 
 export default {
-  title: 'Components/Button',
+  title: '02. Components/Button',
   component: Button,
   decorators: [withDesign],
 } as Meta;
