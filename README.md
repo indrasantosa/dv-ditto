@@ -43,7 +43,27 @@ which dv-ditto
 ```
 5. It should show the executable path of `dv-ditto`
 
-
+## Use it on the project
+1. Create a new CRA project
+```Bash
+npx create-react-app my-app --template typescript
+```
+2. Go into the newly created project folder
+```Bash
+cd my-app
+```
+3. Run the `dv-ditto` cli to bootstrap the project
+```Bash
+dv-ditto
+```
+4. Install all of the dependencies using yarn (support only yarn for now)
+```Bash
+yarn install
+```
+5. Run storybook
+```Bash
+npm run start:storybook
+```
 
 ## Figma
 
