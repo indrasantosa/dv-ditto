@@ -107,3 +107,4 @@ injectDevDependencies();
 addPackageScripts();
 copyProjectDependencyFiles();
 copyStorybookDir();
+console.log('Dv Ditto has been installed successfully!');
