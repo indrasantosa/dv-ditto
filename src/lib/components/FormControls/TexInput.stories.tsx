@@ -22,6 +22,6 @@ DefaultTextInput.args = {
 DefaultTextInput.parameters = {
   design: {
     type: 'figma',
-    url: 'https://www.figma.com/file/Wq4MDMgwh9N1xDXIsM0tx2/DS-LT?node-id=50667%3A5417',
+    url: 'https://www.figma.com/file/cneAdsZ0oyaJmzoTqzedEV/Ditto-Design-System-(SIN-XD)?node-id=50667%3A5417',
   },
 };

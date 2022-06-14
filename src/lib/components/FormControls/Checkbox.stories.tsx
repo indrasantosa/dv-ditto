@@ -12,3 +12,10 @@ const Template: Story<CheckboxProps> = (args) => <Checkbox {...args} />;
 export const DefaultCheckbox = Template.bind({});
 DefaultCheckbox.storyName = 'Checkbox';
 DefaultCheckbox.args = {};
+
+DefaultCheckbox.parameters = {
+  design: {
+    type: 'figma',
+    url: 'https://www.figma.com/file/cneAdsZ0oyaJmzoTqzedEV/Ditto-Design-System-(SIN-XD)?node-id=235%3A24937',
+  },
+};
