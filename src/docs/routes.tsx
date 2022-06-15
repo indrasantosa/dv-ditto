@@ -32,7 +32,6 @@ import BreadcrumbPage from './pages/BreadcrumbPage';
 import ButtonGroupPage from './pages/ButtonGroupPage';
 import ButtonsPage from './pages/ButtonsPage';
 import CardPage from './pages/CardPage';
-import CarouselPage from './pages/CarouselPage';
 import DashboardPage from './pages/DashboardPage';
 import DropdownPage from './pages/DropdownPage';
 import FormsPage from './pages/FormsPage';
@@ -156,17 +155,6 @@ export const routes: RouteProps[] = [
     card: {
       className: 'w-36',
       images: { light: 'card-light.svg', dark: 'card-dark.svg' },
-    },
-  },
-  {
-    title: 'Carousel',
-    icon: BsImages,
-    href: '/carousel',
-    component: <CarouselPage />,
-    group: false,
-    card: {
-      className: 'w-48',
-      images: { light: 'carousel-light.svg', dark: 'carousel-dark.svg' },
     },
   },
   {
