@@ -6,6 +6,7 @@ Easy custom built component for your project. Build web application even faster 
   - [Getting started](#getting-started)
     - [Setting up `dv-ditto` CLI](#setting-up-dv-ditto-cli)
     - [Use it on the project](#use-it-on-the-project)
+    - [Running Storybook](#running-storybook)
   - [Customisation Guide](#customisation-guide)
     - [Customizing Color](#customizing-color)
     - [Customizing font](#customizing-font)
@@ -33,7 +34,7 @@ The CLI will duplicate the components available in `dv-ditto` repository into yo
 
 ### Setting up `dv-ditto` CLI
 
-These steps will go thru the installation of `dv-ditto` CLI tool. For now, this tools only support project that is created using CRA typescript and also using `yarn`
+These steps will go thru the installation of `dv-ditto` CLI tool. For now, this tools only support project that is created using CRA typescript
 
 1. To setup this, first you need to clone this project into your computer.
 ```Bash
@@ -41,7 +42,7 @@ git clone path-to-repository
 ```
 2. Install the project dependencies
 ```Bash
-yarn install
+npm install
 ```
 3. Install the project as a global cli tools for npm
 ```Bash
@@ -70,9 +71,9 @@ Follow these steps to create a create react app and to bootstrap DV Ditto in you
     ```Bash
     dv-ditto
     ```
-4. Install all of the dependencies using yarn (support only yarn for now)
+4. Install all of the dependencies
     ```Bash
-    yarn install
+    npm install
     ```
 5. Add `tailwind` and `dv-ditto` dependency in your css file into the bottom of the page. on `cra` project, this typically would be your `src/App.css` file
     ```css
@@ -84,12 +85,7 @@ Follow these steps to create a create react app and to bootstrap DV Ditto in you
     /* Font that is used in Ditto */
     @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
     ``` 
-6. To test if the components are copied correctly, run storybook using this commands
-    ```Bash
-    npm run start:storybook
-    ```
-
-7. To test the integration with the main app, lets make some changes into the main code. In `cra` this would be `App.tsx`
+6. To test the integration with the main app, lets make some changes into the main code. In `cra` this would be `App.tsx`
     ```tsx
     import { Button } from './lib';
 
@@ -97,10 +93,19 @@ Follow these steps to create a create react app and to bootstrap DV Ditto in you
     <Button>Welcome Ditto</Button>
     ...
     ```
-8. Run the app, you should see a styled button appeared on the screen
+7. Run the app, you should see a styled button appeared on the screen
     ```Bash
     npm run start
     ```
+
+### Running Storybook
+By default, you get a storybook when you use DV Ditto. This helps to quickly preview your changes in your components, test combinations of options, etc.
+
+To test if the components are copied correctly, run storybook using this commands
+```Bash
+npm run start:storybook
+```
+
 
 ## Customisation Guide
 ### Customizing Color
