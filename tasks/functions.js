@@ -1,6 +1,8 @@
 const fs = require('fs');
 const fse = require('fs-extra');
 const path = require('path');
+const chalk = require('chalk');
+
 const { parse, stringify, assign } = require('comment-json');
 
 const {
@@ -16,6 +18,7 @@ const {
 } = require('./constants');
 
 function copyLibObjects(destinationPath) {
+  console.log(`Copying lib objects to ${chalk.green(destinationPath)}`);
   try {
     fse.copySync(sourcePath, destinationPath);
   } catch (err) {
@@ -24,6 +27,8 @@ function copyLibObjects(destinationPath) {
 }
 
 function injectDependencies(targetPackageJsonPath) {
+  console.log(`Injecting dependencies to ${chalk.green(targetPackageJsonPath)}`);
+
   const sourcePackageJsonObject = parse(fs.readFileSync(sourcePackageJsonPath, 'utf8'));
   const relatedDependencies = {};
   dependencyList.map((item) => {
@@ -37,6 +42,7 @@ function injectDependencies(targetPackageJsonPath) {
 
 // TODO: Combine inject dependency and devDependency
 function injectDevDependencies(targetPackageJsonPath) {
+  console.log(`Injecting devDependencies to ${chalk.green(targetPackageJsonPath)}`);
   const sourcePackageJsonObject = parse(fs.readFileSync(sourcePackageJsonPath, 'utf8'));
   const relatedDevDependencies = {};
   devDependencyList.map((item) => {
@@ -55,17 +61,22 @@ function injectDevDependencies(targetPackageJsonPath) {
 }
 
 function copyProjectDependencyFiles(destinationRootPath) {
+  console.log(`Copying project dependency files to ${chalk.green(destinationRootPath)}`);
+
   rootFileList.map((item) => {
     fse.copySync(path.join(sourceRootPath, item), path.join(destinationRootPath, item));
   });
 }
 
-function copyStorybookDir(sourceRootPath, destinationRootPath) {
+function copyStorybookDir(destinationRootPath) {
+  console.log(`Copying storybook dir to ${chalk.green(destinationRootPath)}`);
   fse.copySync(path.join(sourceRootPath, '.storybook'), path.join(destinationRootPath, '.storybook'));
   fse.copySync(path.join(sourceRootPath, './src/stories'), path.join(destinationRootPath, './src/stories'));
 }
 
 function addPackageScripts(targetPackageJsonPath) {
+  console.log(`Injecting scripts to ${chalk.green(targetPackageJsonPath)}`);
+
   const targetPackageJsonObject = parse(fs.readFileSync(targetPackageJsonPath).toString());
   assign(targetPackageJsonObject.scripts, scriptsToInject);
   fs.writeFileSync(targetPackageJsonPath, stringify(targetPackageJsonObject, null, 2));
@@ -79,12 +90,15 @@ function bootstrapProject(destinationRootPath, relativeLibDestinationPath) {
   injectDependencies(targetPackageJsonPath);
   injectDevDependencies(targetPackageJsonPath);
   addPackageScripts(targetPackageJsonPath);
-  copyProjectDependencyFiles(targetPackageJsonPath);
+  copyProjectDependencyFiles(destinationRootPath);
   copyStorybookDir(destinationRootPath);
-  console.log('Dv Ditto has been installed successfully!');
+  console.log(chalk.hex('#b876b3').bold('Ditto has been installed successfully!'));
 }
 
 function getPreset(presetname) {
+  if (typeof presetname !== 'string') {
+    return null;
+  }
   return presetList.includes(presetname) ? presetOptions[presetname] : null;
 }
 

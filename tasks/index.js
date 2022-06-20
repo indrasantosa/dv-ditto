@@ -2,7 +2,7 @@
 const { Command } = require('commander');
 const prompts = require('prompts');
 
-const { presetOptions } = require('./constants');
+const { presetOptions, presetList } = require('./constants');
 const { getPreset, bootstrapProject } = require('./functions');
 
 function promptFrameworks() {
@@ -32,13 +32,14 @@ program
   .description('Bootstrap a project with ditto framework')
   .option('-f, --framework <framework>', 'Main project framework', 'cra')
   .action(async (options) => {
-    let preset = getPreset(options.framework);
-    if (!preset) {
+    let framework = options.framework;
+    if (!presetList.includes(framework)) {
       console.log('Preset not found');
       const response = await promptFrameworks();
-      preset = presetOptions[response.preset];
+      framework = response.preset;
     }
-    console.log(`Bootstraping project based on ${preset} framework`);
+    console.log(`Bootstraping project based on ${framework} framework`);
+    const preset = presetOptions[framework];
     bootstrapProject(process.cwd(), preset.targetLibPath);
   });
 

@@ -46,6 +46,7 @@
   "dependencies": {
     "@floating-ui/react-dom": "^0.6.3",
     "@floating-ui/react-dom-interactions": "^0.4.0",
+    "chalk": "4.1.2",
     "classnames": "^2.3.1",
     "commander": "^9.3.0",
     "comment-json": "^4.2.2",
