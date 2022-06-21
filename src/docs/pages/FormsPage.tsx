@@ -158,7 +158,7 @@ const FormsPage: FC = () => {
               id="username"
               placeholder="Bonnie Green"
               required
-              color="green"
+              color="base"
               helperText={
                 <>
                   <span className="font-medium">Alright!</span> Username available!
@@ -174,7 +174,7 @@ const FormsPage: FC = () => {
               id="username"
               placeholder="Bonnie Green"
               required
-              color="red"
+              color="base"
               helperText={
                 <>
                   <span className="font-medium">Oops!</span> Username already taken!

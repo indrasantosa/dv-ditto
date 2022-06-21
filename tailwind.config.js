@@ -48,6 +48,18 @@ module.exports = {
           20: '#f7f7f8',
           10: '#ffffff',
         },
+        text: {
+          primary: '#000000',
+          sub: '#696969',
+          support: '#a9a9a9',
+        },
+        state: {
+          success: '#696969',
+          error: '#a9a9a9',
+          info: '#555555',
+          warning: '#808080',
+          disabled: '#c2c2c2',
+        },
       },
       fontFamily: {
         sans: ['Lato', ...defaultTheme.fontFamily.sans],

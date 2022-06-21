@@ -5,7 +5,7 @@ import { BiBuoy } from 'react-icons/bi';
 import { TextInput, TextInputProps } from './TextInput';
 
 export default {
-  title: '02. Components/FormControls',
+  title: '02. Components/FormControls/TextInput',
   component: TextInput,
   decorators: [withDesign],
 } as Meta;
@@ -13,7 +13,7 @@ export default {
 const Template: Story<TextInputProps> = (args) => <TextInput {...args} />;
 
 export const DefaultTextInput = Template.bind({});
-DefaultTextInput.storyName = 'TextInput';
+DefaultTextInput.storyName = 'Default';
 DefaultTextInput.args = {
   placeholder: 'placeholder text',
   icon: BiBuoy,

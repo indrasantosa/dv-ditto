@@ -1,43 +1,60 @@
-import { ComponentProps, FC, ReactNode } from 'react';
+import { ComponentProps, FC, ReactNode, useState } from 'react';
 import classNames from 'classnames';
 
 type Size = 'sm' | 'md' | 'lg';
-type Color = 'base' | 'green' | 'red';
+type Color = 'base';
 
 export type TextInputProps = ComponentProps<'input'> & {
   sizing?: Size;
+  label?: string;
   helperText?: ReactNode;
   addon?: ReactNode;
+  postAddon?: ReactNode;
   icon?: FC<ComponentProps<'svg'>>;
   color?: Color;
   isDisabled?: boolean;
 };
 
-const colorClasses: Record<Color, { input: string; helperText: string }> = {
+const colorClasses: Record<
+  Color,
+  {
+    inputContainer: string;
+    inputContainerFocus: string;
+    input: string;
+    helperText: string;
+    inputContainerDisabled: string;
+  }
+> = {
   base: {
+    inputContainer:
+      /*tw*/ 'flex bg-background-white border border-functional-100 rounded-2xl text-functional-120 placeholder:text-functional-100 outline-none disabled:border-functional-70 disabled:placeholder:text-functional-70',
+    inputContainerFocus: /*tw*/ 'ring-2 ring-offset-2 ring-functional-100',
+    inputContainerDisabled: /*tw*/ 'border-state-disabled',
     input:
-      /*tw*/ 'bg-background-white border-functional-100 text-functional-120 placeholder:text-functional-100 focus:ring-2 focus:ring-offset-2 focus:ring-functional-100 outline-none disabled:border-functional-70 disabled:placeholder:text-functional-70',
+      /*tw*/ 'bg-background-white border-0 outline-none ring-0 focus-visible:outline-none text-text-primary placeholder:text-text-support disabled:border-functional-70 disabled:placeholder:text-functional-70',
     helperText: 'text-gray-500 dark:text-gray-400',
   },
-  green: {
-    input:
-      /*tw*/ 'border-green-500 bg-green-50 text-green-900 placeholder-green-700 focus:border-green-500 focus:ring-green-500 dark:border-green-400 dark:bg-green-100 dark:focus:border-green-500 dark:focus:ring-green-500',
-    helperText: 'text-green-600 dark:text-green-500',
-  },
-  red: {
-    input:
-      /*tw*/ 'border-red-500 bg-red-50 text-red-900 placeholder-red-700 focus:border-red-500 focus:ring-red-500 dark:border-red-400 dark:bg-red-100 dark:focus:border-red-500 dark:focus:ring-red-500',
-    helperText: 'text-red-600 dark:text-red-500',
-  },
+};
+
+const labelStyle: Record<Size, string> = {
+  sm: /*tw*/ 'text-base mb-2 text-text-primary',
+  md: /*tw*/ 'text-base mb-2 text-text-primary',
+  lg: /*tw*/ 'text-base mb-2 text-text-primary',
+};
+
+const componentSize: Record<Size, string> = {
+  sm: /*tw*/ 'px-4 py-4',
+  md: /*tw*/ 'px-4 py-4',
+  lg: /*tw*/ 'px-4 py-4',
 };
 
 const textSizing: Record<Size, string> = {
-  sm: /*tw*/ 'px-4 py-4 text-base',
-  md: /*tw*/ 'p-2.5 text-sm',
-  lg: /*tw*/ 'sm:text-md p-4',
+  sm: /*tw*/ 'text-base',
+  md: /*tw*/ 'text-base',
+  lg: /*tw*/ 'text-base',
 };
 
-const iconSizing: Record<Size, string> = {
+const addonSizing: Record<Size, string> = {
   sm: /*tw*/ 'h-6 w-6 text-base',
   md: /*tw*/ 'h-6 w-6',
   lg: /*tw*/ 'h-6 w-6',
@@ -45,44 +62,50 @@ const iconSizing: Record<Size, string> = {
 
 export const TextInput: FC<TextInputProps> = ({
   className,
+  label,
   sizing = 'sm',
   helperText,
   addon,
+  postAddon,
+  // TODO: Remove icon options
   icon: Icon,
   color = 'base',
   isDisabled = false,
   ...props
-}) => (
-  <>
-    <div className="flex">
-      {addon && (
-        <span className="inline-flex items-center rounded-l-md border border-r-0 border-gray-300 bg-gray-200 px-3 text-sm text-gray-900 dark:border-gray-600 dark:bg-gray-600 dark:text-gray-400">
-          {addon}
-        </span>
-      )}
-      <div className="relative w-full">
-        {Icon && (
-          <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-4">
-            <Icon className={`text-gray-500 dark:text-gray-400 ${iconSizing[sizing]}`} />
-          </div>
-        )}
-        <input
-          className={classNames(
-            'block w-full border disabled:cursor-not-allowed disabled:opacity-50',
-            colorClasses[color].input,
-            textSizing[sizing],
-            {
-              'pl-12': Icon,
-              'rounded-2xl': !addon,
-              'rounded-r-lg': addon,
-            },
-            className,
-          )}
-          disabled={isDisabled}
-          {...props}
-        />
+}) => {
+  const [isFocused, setIsFocused] = useState(false);
+  return (
+    <>
+      {label && <div className={labelStyle[sizing]}>{label}</div>}
+      <div
+        className={classNames(componentSize[sizing], colorClasses[color].inputContainer, {
+          [colorClasses[color].inputContainerFocus]: isFocused,
+          [colorClasses[color].inputContainerDisabled]: isDisabled,
+        })}
+      >
+        {addon && <span className="inline-flex items-center text-gray-900">{addon}</span>}
+        <div
+          className={classNames('relative w-full', {
+            'ml-2': addon,
+            'mr-2': postAddon,
+          })}
+        >
+          <input
+            className={classNames(
+              colorClasses[color].input,
+              'group-focus block w-full border disabled:cursor-not-allowed disabled:opacity-50',
+              textSizing[sizing],
+              className,
+            )}
+            disabled={isDisabled}
+            {...props}
+            onFocus={() => setIsFocused(true)}
+            onBlur={() => setIsFocused(false)}
+          />
+        </div>
+        {postAddon && <span className="inline-flex items-center text-gray-900">{postAddon}</span>}
       </div>
-    </div>
-    {helperText && <p className={classNames('mt-1 text-sm', colorClasses[color].helperText)}>{helperText}</p>}
-  </>
-);
+      {helperText && <p className={classNames('mt-2 text-xs', colorClasses[color].helperText)}>{helperText}</p>}
+    </>
+  );
+};
