@@ -7,11 +7,11 @@ export type TabLinkProps = PropsWithChildren<{
   onPress?: () => void;
 }>;
 
-const indicator = /*tw*/ 'after:absolute after:bottom-0 after:left-0 after:w-full';
+const indicator = /*tw*/ 'after:absolute after:bottom-0 after:left-0 after:w-full hover:after:bg-text-sub';
 const indicatorBase = /*tw*/ ' after:h-[1px] after:bg-text-support';
 const indicatorActive = /*tw*/ 'after:h-[2px] after:bg-primary-100';
 
-const element = /*tw*/ 'text-text-support';
+const element = /*tw*/ 'text-text-support hover:text-text-sub';
 const elementActive = /*tw*/ 'text-primary-100';
 
 export const TabItem: FC<TabLinkProps> = ({ active, disabled, children, onPress }) => {
