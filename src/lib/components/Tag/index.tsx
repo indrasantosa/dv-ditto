@@ -4,16 +4,16 @@ import classNames from 'classnames';
 export type TagColor = 'category1' | 'category2' | 'category3' | 'success' | 'error' | 'info' | 'warning';
 
 export type TagProps = PropsWithChildren<{
-  color?: TagColor;
+  type?: TagColor;
   size?: 'sm' | 'md';
   href?: string;
   icon?: FC<ComponentProps<'svg'>>;
 }>;
 
-const colorClasses: Record<TagProps['color'] & string, string> = {
-  category1: /*tw*/ 'bg-primary-10 text-primary-100',
-  category2: /*tw*/ 'bg-secondary-10 text-secondary-100',
-  category3: /*tw*/ 'bg-tertiary-10 text-tertiary-100',
+const colorClasses: Record<TagProps['type'] & string, string> = {
+  category1: /*tw*/ 'bg-primary-25 text-primary-100',
+  category2: /*tw*/ 'bg-secondary-25 text-secondary-100',
+  category3: /*tw*/ 'bg-tertiary-25 text-tertiary-100',
   success: /*tw*/ 'bg-state-success text-background-white',
   warning: /*tw*/ 'bg-state-warning text-background-white',
   info: /*tw*/ 'bg-state-info text-background-white',
@@ -30,7 +30,7 @@ const iconSizeClasses: Record<TagProps['size'] & string, string> = {
   md: 'w-3.5 h-3.5',
 };
 
-export const Tag: FC<TagProps> = ({ children, color = 'category1', size = 'sm', href, icon: Icon }) => {
+export const Tag: FC<TagProps> = ({ children, type: color = 'category1', size = 'sm', href, icon: Icon }) => {
   const span = (
     <>
       <span

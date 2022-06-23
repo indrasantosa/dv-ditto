@@ -15,7 +15,7 @@ const Template: Story<ButtonComponentProps> = (args) => <Button className="!w-24
 export const ButtonWithJustIcon = Template.bind({});
 ButtonWithJustIcon.storyName = 'With Just Icon';
 ButtonWithJustIcon.args = {
-  color: 'primary',
+  buttonType: 'primary',
   size: 'sm',
   icon: BiCheck,
 };

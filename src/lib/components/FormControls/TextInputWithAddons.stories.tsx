@@ -1,6 +1,5 @@
 import { Meta, Story } from '@storybook/react/types-6-0';
 import { withDesign } from 'storybook-addon-designs';
-import { BiBuoy } from 'react-icons/bi';
 
 import { TextInput, TextInputProps } from './TextInput';
 

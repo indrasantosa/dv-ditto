@@ -2,20 +2,20 @@ import { ComponentProps, FC, ReactNode } from 'react';
 import classNames from 'classnames';
 import ButtonGroup from '../ButtonGroup';
 
-export type Color = 'primary' | 'secondary' | 'tertiary';
+export type Type = 'primary' | 'secondary' | 'tertiary';
 type Size = 'sm' | 'md' | 'lg';
 type PositionInGroup = 'start' | 'middle' | 'end';
 
 export type ButtonComponentProps = Omit<ComponentProps<'button'>, 'color'> & {
   label?: ReactNode;
   isDisabled?: boolean;
-  color?: Color;
+  buttonType?: Type;
   size?: Size;
   icon?: FC<ComponentProps<'svg'>>;
   positionInGroup?: PositionInGroup;
 };
 
-const colorClasses: Record<Color, string> = {
+const typeClasses: Record<Type, string> = {
   /**
    * Color should consist of text color, background color, border specs, hover, focus, active, disabled specs and dark mode
    * To change offset color, refer to this manual https://tailwindcss.com/docs/ring-offset-width#changing-the-offset-color
@@ -23,11 +23,11 @@ const colorClasses: Record<Color, string> = {
    * blue: 'text-white bg-blue-700 border border-transparent hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 disabled:hover:bg-blue-700 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 dark:disabled:hover:bg-blue-600'
    */
   primary:
-    /*tw*/ 'text-functional-10 bg-primary-100 border border-transparent hover:bg-primary-80 focus:ring-offset-2 focus:bg-primary-80 focus:ring-2 focus:ring-primary-80 active:bg-primary-40 disabled:bg-primary-10 outline-none',
+    /*tw*/ 'text-functional-10 bg-primary-100 border border-transparent hover:bg-primary-125 focus:ring-offset-2 focus:bg-primary-125 focus:ring-2 focus:ring-primary-125 active:bg-primary-175 disabled:bg-state-disabled outline-none',
   secondary:
-    /*tw*/ 'text-black bg-white border border-primary-100 hover:text-primary-80 hover:bg-white hover:border-primary-80 focus:ring-offset-2 focus:ring-2 focus:ring-primary-80 active:text-secondary-100 active:border-secondary-60 active:ring-secondary-60 disabled:text-secondary-60 disabled:border-secondary-60 outline-none',
+    /*tw*/ 'text-black bg-white border border-functional-120 hover:text-primary-80 hover:bg-white hover:border-primary-80 focus:ring-offset-2 focus:ring-2 focus:ring-primary-80 active:text-secondary-100 active:border-secondary-60 active:ring-secondary-60 disabled:text-secondary-60 disabled:border-secondary-60 outline-none',
   tertiary:
-    /*tw*/ 'text-black bg-white border-0 border-primary-100 hover:text-primary-80 hover:bg-white hover:border-primary-80 active:text-secondary-100 active:border-secondary-60 disabled:text-secondary-60 outline-none',
+    /*tw*/ 'text-black bg-white border-0 border-primary-100 hover:text-primary-80 hover:bg-white hover:border-primary-80 active:text-secondary-100 active:border-secondary-60 disabled:text-secondary-60 focus:bg-background-grey outline-none',
 };
 
 const sizeClasses: Record<Size, string> = {
@@ -55,7 +55,7 @@ const ButtonComponent: FC<ButtonComponentProps> = ({
   isDisabled = false,
   size = 'md',
   icon: Icon,
-  color = 'primary',
+  buttonType: types = 'primary',
   positionInGroup,
   ...props
 }) => (
@@ -63,9 +63,9 @@ const ButtonComponent: FC<ButtonComponentProps> = ({
     data-testid="button-element"
     disabled={isDisabled}
     className={classNames(
-      `group flex h-min w-fit items-center justify-center text-center font-medium focus:z-10`,
+      `group flex h-min w-fit items-center justify-center text-center font-medium transition-all duration-150 focus:z-10`,
       sizeClasses[size],
-      colorClasses[color],
+      typeClasses[types],
       borderRadiusClasses[size],
       {
         // 'border border-gray-900 dark:border-white': color === 'tertiary' && outline,

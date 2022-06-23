@@ -1,12 +1,12 @@
 import classNames from 'classnames';
 import { PropsWithChildren, FC } from 'react';
-import { Color } from '../Button';
+import { Type } from '../Button';
 
 export interface SidebarCTAProps extends PropsWithChildren<Record<string, unknown>> {
-  color?: Color;
+  color?: Type;
 }
 
-const colorClasses: Record<Color, string> = {
+const colorClasses: Record<Type, string> = {
   primary: 'bg-blue-50 dark:bg-blue-900',
   secondary: 'bg-blue-50 dark:bg-blue-900',
   tertiary: 'bg-blue-50 dark:bg-blue-900',

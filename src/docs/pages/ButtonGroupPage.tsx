@@ -10,9 +10,9 @@ const ButtonGroupPage: FC = () => {
       title: 'Default example',
       code: (
         <Button.Group>
-          <Button color="tertiary">Profile</Button>
-          <Button color="tertiary">Settings</Button>
-          <Button color="tertiary">Messages</Button>
+          <Button buttonType="tertiary">Profile</Button>
+          <Button buttonType="tertiary">Settings</Button>
+          <Button buttonType="tertiary">Messages</Button>
         </Button.Group>
       ),
     },
@@ -20,13 +20,13 @@ const ButtonGroupPage: FC = () => {
       title: 'Group buttons with icons',
       code: (
         <Button.Group>
-          <Button color="tertiary">
+          <Button buttonType="tertiary">
             <HiUserCircle className="mr-3 h-4 w-4" /> Profile
           </Button>
-          <Button color="tertiary">
+          <Button buttonType="tertiary">
             <HiAdjustments className="mr-3 h-4 w-4" /> Settings
           </Button>
-          <Button color="tertiary">
+          <Button buttonType="tertiary">
             <HiCloudDownload className="mr-3 h-4 w-4" /> Messages
           </Button>
         </Button.Group>
@@ -37,9 +37,9 @@ const ButtonGroupPage: FC = () => {
       code: (
         <div className="flex flex-wrap gap-2">
           <Button.Group>
-            <Button color="primary">Profile</Button>
-            <Button color="primary">Settings</Button>
-            <Button color="primary">Messages</Button>
+            <Button buttonType="primary">Profile</Button>
+            <Button buttonType="primary">Settings</Button>
+            <Button buttonType="primary">Messages</Button>
           </Button.Group>
           <Button.Group>
             <Button>Profile</Button>
@@ -59,9 +59,9 @@ const ButtonGroupPage: FC = () => {
       code: (
         <div className="flex flex-wrap gap-2">
           <Button.Group outline>
-            <Button color="tertiary">Profile</Button>
-            <Button color="tertiary">Settings</Button>
-            <Button color="tertiary">Messages</Button>
+            <Button buttonType="tertiary">Profile</Button>
+            <Button buttonType="tertiary">Settings</Button>
+            <Button buttonType="tertiary">Messages</Button>
           </Button.Group>
           <Button.Group outline>
             <Button>Profile</Button>
@@ -81,13 +81,13 @@ const ButtonGroupPage: FC = () => {
       code: (
         <div className="flex flex-wrap gap-2">
           <Button.Group outline>
-            <Button color="tertiary">
+            <Button buttonType="tertiary">
               <HiUserCircle className="mr-3 h-4 w-4" /> Profile
             </Button>
-            <Button color="tertiary">
+            <Button buttonType="tertiary">
               <HiAdjustments className="mr-3 h-4 w-4" /> Settings
             </Button>
-            <Button color="tertiary">
+            <Button buttonType="tertiary">
               <HiCloudDownload className="mr-3 h-4 w-4" /> Messages
             </Button>
           </Button.Group>

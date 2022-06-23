@@ -21,7 +21,7 @@ ButtonWithPostIcon.args = {
       <BiBitcoin className="ml-2 h-5 w-5" />
     </>
   ),
-  color: 'primary',
+  buttonType: 'primary',
   size: 'sm',
 };
 

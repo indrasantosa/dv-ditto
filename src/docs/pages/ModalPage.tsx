@@ -30,7 +30,7 @@ const ModalPage: FC = () => {
             </Modal.Body>
             <Modal.Footer>
               <Button onClick={() => setOpenModal(undefined)}>I accept</Button>
-              <Button color="tertiary" onClick={() => setOpenModal(undefined)}>
+              <Button buttonType="tertiary" onClick={() => setOpenModal(undefined)}>
                 Decline
               </Button>
             </Modal.Footer>
@@ -51,10 +51,10 @@ const ModalPage: FC = () => {
                 Are you sure you want to delete this product?
               </h3>
               <div className="flex justify-center gap-4">
-                <Button color="primary" onClick={() => setOpenModal(undefined)}>
+                <Button buttonType="primary" onClick={() => setOpenModal(undefined)}>
                   {"Yes, I'm sure"}
                 </Button>
-                <Button color="secondary" onClick={() => setOpenModal(undefined)}>
+                <Button buttonType="secondary" onClick={() => setOpenModal(undefined)}>
                   No, cancel
                 </Button>
               </div>
@@ -144,7 +144,7 @@ const ModalPage: FC = () => {
             </Modal.Body>
             <Modal.Footer>
               <Button onClick={() => setOpenModal(undefined)}>I accept</Button>
-              <Button color="primary" onClick={() => setOpenModal(undefined)}>
+              <Button buttonType="primary" onClick={() => setOpenModal(undefined)}>
                 Decline
               </Button>
             </Modal.Footer>
@@ -189,7 +189,7 @@ const ModalPage: FC = () => {
             </Modal.Body>
             <Modal.Footer>
               <Button onClick={() => setOpenModal(undefined)}>I accept</Button>
-              <Button color="primary" onClick={() => setOpenModal(undefined)}>
+              <Button buttonType="primary" onClick={() => setOpenModal(undefined)}>
                 Decline
               </Button>
             </Modal.Footer>

@@ -11,9 +11,9 @@ const ButtonsPage: FC = () => {
       code: (
         <div className="flex flex-wrap gap-2">
           <Button>Default</Button>
-          <Button color="primary">Primary</Button>
-          <Button color="secondary">Secondary</Button>
-          <Button color="tertiary">Tertiary</Button>
+          <Button buttonType="primary">Primary</Button>
+          <Button buttonType="secondary">Secondary</Button>
+          <Button buttonType="tertiary">Tertiary</Button>
         </div>
       ),
       codeClassName: 'dark:!bg-gray-900',

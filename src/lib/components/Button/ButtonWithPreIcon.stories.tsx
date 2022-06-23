@@ -21,7 +21,7 @@ ButtonWithPreIcon.args = {
       Bitcoin
     </>
   ),
-  color: 'primary',
+  buttonType: 'primary',
   size: 'sm',
 };
 

@@ -32,26 +32,12 @@ DefaultTag.parameters = {
 export const TagWithIcon = Template.bind({});
 TagWithIcon.storyName = 'Tag with icon';
 TagWithIcon.args = {
-  color: 'category1',
+  type: 'category1',
   icon: HiCheck,
   size: 'sm',
   children: '2 minutes ago',
 };
 TagWithIcon.parameters = {
-  design: {
-    type: 'figma',
-    url: 'https://www.figma.com/file/cneAdsZ0oyaJmzoTqzedEV/Ditto-Design-System-(SIN-XD)?node-id=51005%3A17102',
-  },
-};
-
-export const TagOnlyIcon = Template.bind({});
-TagOnlyIcon.storyName = 'Tag only icon';
-TagOnlyIcon.args = {
-  color: 'category1',
-  size: 'sm',
-  icon: HiCheck,
-};
-TagOnlyIcon.parameters = {
   design: {
     type: 'figma',
     url: 'https://www.figma.com/file/cneAdsZ0oyaJmzoTqzedEV/Ditto-Design-System-(SIN-XD)?node-id=51005%3A17102',
