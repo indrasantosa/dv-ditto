@@ -7,15 +7,6 @@ module.exports = {
       colors: {
         // Generate colors easily with this tool: https://javisperez.github.io/tailwindcolorshades/
         primary: {
-          25: '#C6DED5',
-          50: '#8CBCAA',
-          75: '#529B80',
-          100: '#177B57',
-          125: '#03553B',
-          150: '#033D2B',
-          175: '#03291A',
-        },
-        secondary: {
           25: '#bfe1e8',
           50: '#81c4d2',
           75: '#3ca5bd',
@@ -23,6 +14,15 @@ module.exports = {
           125: '#01768f',
           150: '#035f73',
           175: '#034554',
+        },
+        secondary: {
+          25: '#C6DED5',
+          50: '#8CBCAA',
+          75: '#529B80',
+          100: '#177B57',
+          125: '#03553B',
+          150: '#033D2B',
+          175: '#03291A',
         },
         tertiary: {
           25: '#eff4d5',
