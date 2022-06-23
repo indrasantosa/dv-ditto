@@ -35,9 +35,17 @@ module.exports = {
         },
         text: {
           primary: '#000000',
-          sub: '#696969',
-          support: '#a9a9a9',
+          secondary: '#555555',
+          tertiary: '#808080',
+          support: '#b2b2b2',
           white: '#ffffff',
+        },
+        border: {
+          border1: '#000000',
+          border2: '#555555',
+          border3: '#808080',
+          border4: '#b2b2b2',
+          border5: '#eeeeee',
         },
         background: {
           white: '#ffffff',

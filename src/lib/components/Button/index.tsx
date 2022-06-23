@@ -25,9 +25,9 @@ const typeClasses: Record<Type, string> = {
   primary:
     /*tw*/ 'text-functional-10 bg-primary-100 border border-transparent hover:bg-primary-125 focus:ring-offset-2 focus:bg-primary-125 focus:ring-2 focus:ring-primary-125 active:bg-primary-175 disabled:bg-state-disabled outline-none',
   secondary:
-    /*tw*/ 'text-black bg-white border border-functional-120 hover:text-primary-80 hover:bg-white hover:border-primary-80 focus:ring-offset-2 focus:ring-2 focus:ring-primary-80 active:text-secondary-100 active:border-secondary-60 active:ring-secondary-60 disabled:text-secondary-60 disabled:border-secondary-60 outline-none',
+    /*tw*/ 'text-text-primary bg-background-white border border-border-border1 hover:text-text-secondary hover:bg-white hover:border-border-border2 focus:ring-offset-2 focus:ring-2 focus:ring-border-border2 active:text-text-tertiary active:border-border-border3 active:ring-border-border3 disabled:text-state-disabled disabled:border-state-disabled outline-none',
   tertiary:
-    /*tw*/ 'text-black bg-white border-0 border-primary-100 hover:text-primary-80 hover:bg-white hover:border-primary-80 active:text-secondary-100 active:border-secondary-60 disabled:text-secondary-60 focus:bg-background-grey outline-none',
+    /*tw*/ 'text-text-primary bg-background-white border-0 hover:text-text-secondary hover:bg-background-white active:text-text-tertiary disabled:text-state-disabled focus:text-text-secondary focus:bg-background-grey outline-none',
 };
 
 const sizeClasses: Record<Size, string> = {
