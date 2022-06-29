@@ -52,7 +52,8 @@
     "comment-json": "^4.2.2",
     "fs-extra": "^10.1.0",
     "prompts": "^2.4.2",
-    "react-icons": "^4.3.1"
+    "react-icons": "^4.3.1",
+    "react-indiana-drag-scroll": "^2.2.0"
   },
   "peerDependencies": {
     "flowbite": "^1",
