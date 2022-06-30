@@ -24,10 +24,13 @@ export const ToggleButtonItem: FC<TabLinkProps> = ({ active, disabled, children,
       })}
     >
       <div
-        className={classNames('flex min-w-[70px] cursor-pointer flex-row px-4 py-3 text-center duration-150', {
-          [elementActive]: active,
-          [element]: !active,
-        })}
+        className={classNames(
+          'flex min-w-[70px] cursor-pointer flex-row items-center justify-center px-4 py-3 duration-150',
+          {
+            [elementActive]: active,
+            [element]: !active,
+          },
+        )}
       >
         {children}
       </div>

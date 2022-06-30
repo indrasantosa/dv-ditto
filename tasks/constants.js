@@ -51,8 +51,8 @@ const presetOptions = {
     packageJsonFile: './package.json',
   },
   nextjs: {
-    targetLibPath: './src/lib',
-    targetCssFile: './src/App.css',
+    targetLibPath: './components/ditto',
+    targetCssFile: './styles/globals.css',
     packageJsonFile: './package.json',
   },
   gatsby: {

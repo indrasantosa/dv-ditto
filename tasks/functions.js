@@ -26,6 +26,16 @@ function copyLibObjects(destinationPath) {
   }
 }
 
+function appendTailwindCssBootstrap(cssDestinationPath) {
+  const textToAppend = `
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+  `;
+  fs.appendFileSync(cssDestinationPath, textToAppend);
+  console.log(`Appended tailwind css bootstrap to ${chalk.green(cssDestinationPath)}`);
+}
+
 function injectDependencies(targetPackageJsonPath) {
   console.log(`Injecting dependencies to ${chalk.green(targetPackageJsonPath)}`);
 
@@ -82,7 +92,7 @@ function addPackageScripts(targetPackageJsonPath) {
   fs.writeFileSync(targetPackageJsonPath, stringify(targetPackageJsonObject, null, 2));
 }
 
-function bootstrapProject(destinationRootPath, relativeLibDestinationPath) {
+function bootstrapProject(destinationRootPath, relativeLibDestinationPath, targetCssFile) {
   const destinationPath = path.join(destinationRootPath, relativeLibDestinationPath);
   const targetPackageJsonPath = path.join(destinationRootPath, 'package.json');
 
@@ -92,7 +102,47 @@ function bootstrapProject(destinationRootPath, relativeLibDestinationPath) {
   addPackageScripts(targetPackageJsonPath);
   copyProjectDependencyFiles(destinationRootPath);
   copyStorybookDir(destinationRootPath);
-  console.log(chalk.hex('#b876b3').bold('Ditto has been installed successfully!'));
+  appendTailwindCssBootstrap(targetCssFile);
+
+  console.log(`
+
+  ⠀⠀⠀⢠⡜⠛⠛⠿⣤⠀⠀⣤⡼⠿⠿⢧⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+  ⠀⣀⡶⠎⠁⠀⠀⠀⠉⠶⠶⠉⠁⠀⠀⠈⠹⢆⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+  ⣀⡿⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠉⠶⠶⠶⠶⣆⡀⠀⠀⠀⠀
+  ⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⢣⡄⠀⠀⠀
+  ⠛⣧⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡇⠀⠀
+  ⠀⠛⣧⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠿⠀⠀⠀⠀⢠⡼⠃⠀⠀
+  ⠀⠀⠿⢇⡀⠀⠀⠀⠀⠀⠀⠀⠰⠶⠶⢆⣀⣀⣀⠀⠀⠀⠀⠀⠀⢸⡇⠀⠀⠀
+  ⠀⠀⠀⢸⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠉⠉⠀⠀⠀⠀⠀⠀⢸⡇⠀⠀⠀
+  ⠀⠀⠀⢸⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡇⠀⠀
+  ⠀⠀⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⢣⣤
+  ⠀⣶⡏⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿
+  ⠀⠿⣇⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣀⣀⣀⣀⣀⠀⠀⠀⠀⢀⣀⣸⠿
+  ⠀⠀⠙⢳⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⡞⠛⠛⠛⠛⠛⠛⣶⣶⣶⣶⡞⠛⠃⠀
+
+${chalk.hex('#b876b3').bold('Ditto has been bootstraped to your project!')}
+  `);
+
+  console.log(`
+${chalk.red('For non CRA project! Please update tailwind.config.js according to your project setup.')}
+${chalk.red('Refer to example here https://tailwindcss.com/docs/guides/nextjs on step 3.')}
+
+Run following command to install the dependencies:
+
+  ${chalk.green('npm install')}
+
+And then run following command to start the development server:
+
+  ${chalk.green('npm run dev')}
+
+You can also run following command to run the storybook server:
+
+  ${chalk.green('npm run start:storybook')}
+
+Reach us out on #sg-design-system channel for help and feedback.
+
+${chalk.hex('#b876b3').bold('Happy building!')}
+  `);
 }
 
 function getPreset(presetname) {

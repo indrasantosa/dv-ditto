@@ -1,6 +1,7 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
+  // Update these values to match your project
   content: ['./src/**/*.{js,jsx,ts,tsx,mdx}', './node_modules/flowbite/**/*.js'],
   theme: {
     extend: {
